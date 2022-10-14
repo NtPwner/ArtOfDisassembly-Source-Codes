@@ -1,0 +1,17 @@
+#include <Res\SkeletonDlg.rc>
+#include <Res\MainMnu.rc>
+
+#define IDR_MENU 10000
+#define IDM_FILE 10001
+#define IDM_OPEN 10002
+#define IDM_CLOSE 10003
+#define IDM_EXIT 10004
+IDR_MENU MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "Open\tCtrl+O",IDM_OPEN
+    MENUITEM "Close",IDM_CLOSE
+    MENUITEM "Exit\tAlt+X",IDM_EXIT
+  END
+END

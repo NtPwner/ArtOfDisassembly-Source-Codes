@@ -1,0 +1,57 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=ModR/M -Part II-
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[MakeDef]
+Menu=1,1,1,1,1,1,1,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+7=
+[MakeFiles]
+0=ModRM II.rap
+1=ModRM II.rc
+2=ModRM II.asm
+3=ModRM II.obj
+4=ModRM II.res
+5=ModRM II.exe
+6=ModRM II.def
+7=ModRM II.dll
+8=ModRM II.txt
+9=ModRM II.lib
+10=ModRM II.mak
+[Files]
+1=ModRM II.Asm
+2=ModRM II.Inc
+3=ModRM II.Rc
+4=ModRM II.dlg
+[Size]
+4=0,0,0,0
+2=0,0,0,0,352
+1=0,0,0,0,1819
+[Version-Inc]
+Options=52
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+[Find]
+1="iaGetRegMem PROC"
+2="iaGetRegMem"
+3="iaCommonEbGb"
+4="iaOpcode0000"
+5="iaOpcodeMap1"
+6="iaSelectOpcode"

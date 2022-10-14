@@ -1,0 +1,61 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=Bringing Life To Our Skeleton
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+[MakeDef]
+Menu=1,1,1,1,1,1,1,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:"$L",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+[MakeFiles]
+0=Skeleton.rap
+1=Skeleton.rc
+2=Skeleton.asm
+3=Skeleton.obj
+4=Skeleton.res
+5=Skeleton.exe
+6=Skeleton.def
+7=Skeleton.dll
+8=Skeleton.txt
+9=Skeleton.lib
+10=Skeleton.mak
+[Files]
+1=Skeleton.Asm
+2=Skeleton.Inc
+3=Skeleton.Rc
+4=Skeleton.dlg
+5=Main.mnu
+6=Msgs.inc
+[Version-Inc]
+Options=52
+[Size]
+4=0,0,0,0
+2=0,0,0,0,1402
+3=0,0,0,0,0
+1=0,0,0,0,6942
+6=0,0,0,0,940
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]

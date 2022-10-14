@@ -1,0 +1,93 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=AoD Beta
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+[MakeDef]
+Menu=1,1,1,1,1,1,1,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:"$L",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=
+17=
+[MakeFiles]
+0=AoD Beta.rap
+1=AoD Beta.rc
+2=AoD Beta.asm
+3=AoD Beta.obj
+4=AoD Beta.res
+5=AoD Beta.exe
+6=AoD Beta.def
+7=AoD Beta.dll
+8=AoD Beta.txt
+9=AoD Beta.lib
+10=AoD Beta.mak
+[Files]
+1=AoD Beta.Asm
+2=AoD Beta.Inc
+3=AoD Beta.Rc
+4=AoD Beta.dlg
+5=Main.mnu
+6=Msgs.inc
+7=DsmListView.inc
+8=MenuHandling.inc
+9=EventHandler.inc
+10=FunctionsDlg.dlg
+11=Functions.inc
+12=PEStuff.inc
+13=BytesParser.inc
+[Version-Inc]
+Options=52
+[Size]
+4=0,0,0,0
+2=0,0,0,0,328
+3=0,0,0,0,58
+1=0,0,0,0,132
+6=0,0,0,0,1
+8=0,0,0,0,5741
+7=0,0,0,0,1526
+9=0,0,0,0,2978
+10=0,0,0,0
+11=0,0,0,0,119
+12=0,0,0,0,7641
+13=0,0,0,0,152
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+[Find]
+1="wsprintf"
+2="szSectionInfo2"
+3="szSectionInfo4"
+4="PrepareListView"
+5="PrepareEventHandler"
+6="IDC_IMPORTS"
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF

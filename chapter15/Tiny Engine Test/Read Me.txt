@@ -1,0 +1,4 @@
+Included is the AoD with small instruction support.
+Included instructions in this test: 0x68 - 0x6A - 0x86 - 0x88 - 0x89 - 0x8A - 0x8B - 0xC6 - 0xE8  .
+
+CuTedEvil

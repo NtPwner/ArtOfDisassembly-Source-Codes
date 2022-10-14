@@ -1,0 +1,10 @@
+#define 	IDI_ICON 		300
+IDI_ICON	ICON   DISCARDABLE Res\Devil.ico
+
+#include <Res\PrefixesDlg.rc>
+#include <Res\SegmentsDlg.rc>
+#include <Res\OperandSizeDlg.rc>
+#include <Res\AddressSizeDlg.rc>
+#include <Res\REPsDlg.rc>
+#include <Res\LOCKDlg.rc>
+#include <Res\PracticeDlg.rc>

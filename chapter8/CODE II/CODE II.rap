@@ -1,0 +1,91 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=AoD: [CODE] Part II
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+[MakeDef]
+Menu=1,1,1,1,1,1,1,1,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+7=0,0,\OllyDbg\OllyDbg,5
+[MakeFiles]
+0=CODE II.rap
+1=CODE II.rc
+2=CODE II.asm
+3=CODE II.obj
+4=CODE II.res
+5=CODE II.exe
+6=CODE II.def
+7=CODE II.dll
+8=CODE II.txt
+9=CODE II.lib
+10=CODE II.mak
+11=CODE II.hla
+[Files]
+1=CODE II.Asm
+2=CODE II.Inc
+3=CODE II.Rc
+4=CODE II.dlg
+5=Misc.inc
+6=Decoder.inc
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[VerInf]
+Nme=VersionInfo
+ID=1
+FV=1.0.0.0
+PV=1.0.0.0
+VerOS=0x00000004
+VerFT=0x00000001
+VerLNG=0x00000409
+VerCHS=0x000004B0
+ProductVersion=1.0.0
+ProductName=
+OriginalFilename=
+LegalTrademarks=
+LegalCopyright=
+InternalName=
+FileDescription=AoD: Tool to explain the [CODE] part in the IA32 Format Instruction
+FileVersion=1.0.0
+CompanyName=[REA]
+[Size]
+5=0,0,0,0,1385
+3=0,0,0,0,50
+1=0,0,0,0,1304
+4=0,0,0,0
+2=0,0,0,0,640
+6=0,0,0,0,1153
+[Version-Inc]
+Options=52
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+[Find]
+1="Instruction_Bin"
+2="Instruction_Hex"
+3="100010b"
+4="InstructionIndex"
+5="Instruction_1_Inst"
+6="movsx"
+7="add"

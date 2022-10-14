@@ -1,0 +1,4 @@
+#include <Res\ModRM32Dlg.rc>
+#include "Res/ModRMVer.rc"
+#define 	IDI_ICON 		300
+IDI_ICON	ICON   DISCARDABLE Res\Devil.ico

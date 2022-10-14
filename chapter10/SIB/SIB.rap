@@ -1,0 +1,85 @@
+[Project]
+Assembler=masm
+Type=Win32 App
+Description=AoD: Everything About ModRM
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+Debug=0
+[MakeDef]
+Menu=1,1,1,1,1,1,1,1,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /RELEASE /VERSION:4.0 /LIBPATH:"$L",3,4
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+7=0,0,\OllyDbg\OllyDbg,5
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=5,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /VERSION:4.0 /LIBPATH:"$L",3,4
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,\OllyDbg\OllyDbg,5
+[MakeFiles]
+0=SIB.rap
+1=SIB.rc
+2=SIB.asm
+3=SIB.obj
+4=SIB.res
+5=SIB.exe
+6=SIB.def
+7=SIB.dll
+8=SIB.txt
+9=SIB.lib
+10=SIB.mak
+11=SIB.hla
+[Files]
+1=SIB.Asm
+2=SIB.Inc
+3=SIB.Rc
+4=SIB32.dlg
+5=Misc.inc
+6=Decoding.inc
+[Version-Inc]
+Options=52
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[Size]
+1=0,0,0,0,1374
+4=0,0,0,0
+3=0,0,0,0,92
+2=0,0,0,0,3406
+5=0,0,0,0,1360
+6=0,0,0,0,20179
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+[Find]
+1="REG32"
+2="mov Displacement, eax"
+3="szHexDecode_3"
+4="szModRM_10_1"
+5="szModRM_01_1"
+6="EnableDISP"
+7="szModRM_00_5"
+8="szBuffer"
+9="RegTable"
+10="OperandSize"

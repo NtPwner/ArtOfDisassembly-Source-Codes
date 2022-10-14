@@ -1,0 +1,20 @@
+#define IDR_MENU 10000
+#define IDM_FILE 10001
+#define IDM_OPEN 10002
+#define IDM_CLOSE 10003
+#define IDM_EXIT 10004
+#define IDM_TOOLS 10005
+#define IDM_IMPORTS 10006
+IDR_MENU MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "Open",IDM_OPEN
+    MENUITEM "Close",IDM_CLOSE
+    MENUITEM "Exit",IDM_EXIT
+  END
+  POPUP "&Tools"
+  BEGIN
+    MENUITEM "Import Funtions",IDM_IMPORTS
+  END
+END

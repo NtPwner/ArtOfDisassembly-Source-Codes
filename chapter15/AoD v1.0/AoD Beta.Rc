@@ -1,0 +1,10 @@
+#define 	IDI_ICON 		300
+
+IDI_ICON		ICON   DISCARDABLE Res\DevilXP.ico
+
+
+#include <Res\MainMnu.rc>
+#include <Res\AoD BetaDlg.rc>
+#include <Res\FunctionsDlgDlg.rc>
+#include "Res/AoD BetaVer.rc"
+#include "Res/AoD BetaStr.rc"

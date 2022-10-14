@@ -1,0 +1,3 @@
+#include <Res\MainMnu.rc>
+#include <Res\AoD BetaDlg.rc>
+#include <Res\FunctionsDlgDlg.rc>

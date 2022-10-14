@@ -1,0 +1,4 @@
+;---------------------------------
+#include <Res\MainMnu.rc>
+#include <Res\PEInfoDlg.rc>
+#include <Res\ImportTableDlg.rc>

@@ -1,0 +1,47 @@
+GetImports proc
+	LOCAL tvi:TV_INSERTSTRUCT
+	LOCAL szTemp[50]:byte
+	mov esi, ImportSection
+	assume esi: ptr IMAGE_IMPORT_DESCRIPTOR
+	.while [esi].FirstThunk!=0 || [esi].TimeDateStamp!=0 || \
+		[esi].ForwarderChain!=0 || [esi].Name1!=0 || [esi].OriginalFirstThunk!=0
+	
+		mov tvi.hParent, 0
+		mov tvi.hInsertAfter, TVI_SORT
+		mov tvi.item.state -8, TVIF_TEXT
+		invoke RVAToOffset,[esi].Name1
+		add eax, FileOffset
+		mov tvi.item.pszText,eax
+		invoke SendDlgItemMessage,hImportsDlg,IDC_IMPORTS,TVM_INSERTITEM,0,addr tvi
+		mov tvi.hParent, eax
+		invoke RVAToOffset,[esi].FirstThunk
+		add eax, FileOffset
+		mov edi, eax
+		cmp [esi].TimeDateStamp, 0
+		jz @f
+		invoke RVAToOffset,[esi].OriginalFirstThunk
+		add eax, FileOffset
+		mov edi, eax		
+ @@:		
+		mov tvi.hInsertAfter,TVI_SORT
+		.while dword ptr [edi]!=0
+			test dword ptr [edi],80000000h	; Check for IMAGE_ORDINAL_FLAG32 (MSB)
+			.if ZERO?
+				invoke RVAToOffset,dword ptr [edi]
+				add eax, FileOffset
+				add eax,2							; Skip the (Hint)
+				mov tvi.item.pszText,eax
+			.else									; Import by ordinals
+				mov edx,dword ptr [edi]
+				and edx,7fffffffh
+				invoke wsprintf,addr szTemp,addr szToDecimal,edx
+				lea eax,szTemp
+				mov tvi.item.pszText,eax
+			.endif
+			invoke SendDlgItemMessage,hImportsDlg,IDC_IMPORTS,TVM_INSERTITEM,0,addr tvi
+			add edi,4
+		.endw
+		add esi,sizeof IMAGE_IMPORT_DESCRIPTOR
+	.endw
+	ret
+GetImports endp
